@@ -2,10 +2,10 @@ import { FormEvent, useState } from 'react';
 import { IItem } from '../types/IItem';
 
 interface FormProps {
-  onSubmit(item: IItem): void;
+  onAddItems(item: IItem): void;
 }
 
-function Form({ onSubmit }: FormProps) {
+function Form({ onAddItems }: FormProps) {
   const [description, setDescription] = useState<string>('');
   const [quantity, setQuantity] = useState<number>(1);
 
@@ -21,7 +21,7 @@ function Form({ onSubmit }: FormProps) {
     setDescription('');
     setQuantity(1);
 
-    onSubmit(item);
+    onAddItems(item);
   }
 
   return (
